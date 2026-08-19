@@ -33,3 +33,7 @@ python3 scripts/merge_research.py .
 - 热点和新闻必须先核验关键事实；公开资料可能过期或带有自我叙事偏差。
 
 详见 [SKILL.md](SKILL.md) 的“诚实边界”与“调研来源”。
+
+## 许可
+
+代码与仓库内容以 [MIT License](LICENSE) 发布。引用、改编或再分发第三方公开材料时，仍需遵守其原始版权与平台条款。
