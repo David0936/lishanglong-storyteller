@@ -4,3 +4,4 @@ __pycache__/
 *.vtt
 *_transcript.txt
 .DS_Store
+tmp/

@@ -105,6 +105,20 @@ def check_primary_sources(content: str) -> tuple[bool, str]:
     return passed, f"一手来源占比: {primary}/{total} ({ratio:.0%}) {'✅' if passed else '❌ (应>50%)'}"
 
 
+def check_turning_point_workflow(content: str) -> tuple[bool, str]:
+    """检查人物资料包是否有从概括到故事的因果挖掘流程。"""
+    markers = [
+        '形式B3：人物小传/资料包',
+        '转折缺口卡',
+        '事件**、**触发**和**解释',
+        '最小可写故事',
+        '主语—动作—来源',
+    ]
+    present = sum(marker in content for marker in markers)
+    passed = present == len(markers)
+    return passed, f"人物转折挖掘: {present}/{len(markers)}项 {'✅' if passed else '❌'}"
+
+
 def main():
     if len(sys.argv) < 2:
         print("用法: python3 quality_check.py <SKILL.md路径>")
@@ -124,6 +138,7 @@ def main():
         ("诚实边界", check_honest_boundary),
         ("内在张力", check_tensions),
         ("一手来源占比", check_primary_sources),
+        ("人物转折挖掘", check_turning_point_workflow),
     ]
 
     print(f"质量检查: {skill_path.name}")
