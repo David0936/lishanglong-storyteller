@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.srt
+*.vtt
+*_transcript.txt
+.DS_Store
