@@ -113,6 +113,10 @@ def check_turning_point_workflow(content: str) -> tuple[bool, str]:
         '事件**、**触发**和**解释',
         '最小可写故事',
         '主语—动作—来源',
+        '深挖账本',
+        '停止条件',
+        '主因果链',
+        '叙述时间',
     ]
     present = sum(marker in content for marker in markers)
     passed = present == len(markers)
